@@ -2,9 +2,12 @@
 
 namespace App\Application\Console;
 
-use App\Application\Console\Commands\TestCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+
+use App\Application\Console\Commands\TestCommand;
+use App\Application\Console\Commands\ArticleCreateCommand;
+use App\Application\Console\Commands\ArticleCreateCommandV2;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,6 +18,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         TestCommand::class,
+        ArticleCreateCommand::class,
+        ArticleCreateCommandV2::class
     ];
 
     /**
