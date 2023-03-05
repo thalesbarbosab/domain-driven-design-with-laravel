@@ -43,8 +43,8 @@ class ArticleCreateCommandV2 extends Command
             $this->error('Description is required');
             return;
         }
-        $article['reading_time'] = (int) $this->ask('Enter the "Reading time (in minutes)" (optional)', 1);
-        if(!empty($article['reading_time']) && !is_int($article['reading_time'])){
+        $article['reading_time'] = $this->ask('Enter the "Reading time (in minutes)" (optional)', 1);
+        if(!empty($article['reading_time']) && !is_int(intval($article['reading_time']))){
             $this->error('Reading time must be an integer value');
             return;
         }
